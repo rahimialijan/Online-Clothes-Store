@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+
+/*navbar style is here*/
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    background: #465163;
+    color: #fff;
+    margin-bottom: 30px;
+    width: 100%;
+    position: fixed;
+}
+.navbar h2{
+    font-size: 40px;
+}
+.shopping-cart{
+    display: flex;
+    position: relative;
+}
+.shopping-cart i{
+    padding: 10px;
+    background-color: #775d67;
+    font-size: 30px;
+    border-radius: 4px;
+}
+.amount{
+    position: absolute;
+    padding: 6px;
+    background: #fff;
+    color: red;
+    top: -15px;
+    right: -10px;
+    border-radius: 3px;
+}
+
+/*Cart sectio style is here*/
+.cart{
+    padding-top:160px;
+    display: grid;
+    grid-template-columns: repeat(4, 230px);
+    margin:0 100px;
+    gap: 30px;
+    justify-content: center;
+}
+.items{
+    width: 230px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #465163;
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+.items:hover{
+    width: 235px;
+    height: auto;
+    box-shadow: 10px 10px 30px rgba(0,0,0 , 0.2);
+}
+.items img{
+    border-radius: 10px;
+}
+.items p{
+    font-size: 13px;
+    padding: 10px 0;
+}
+.items .star i{
+    color: hsl(39, 100%, 50%);
+}
+.details{
+    padding: 15px 10px;
+}
+.amount-quintity{
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.quintity{
+    display: flex;
+}
+.quintity div{
+    padding: 0 5px;
+    background-color: red;
+    color: #fff;
+    border-radius: 2px;
+}
+.quintity i{
+    cursor: pointer;
+}
+/* Using Media Quiry for making responsive page*/
+
+@media(max-width:900px){
+    .cart{
+        grid-template-columns: repeat(2, 230px);
+        margin: 10px auto;
+    }
+    .navbar{
+       min-width: 100%;
+    }
+}
+@media(max-width:450px){
+    .cart{
+        grid-template-columns: repeat(1, 230px);
+        justify-content:center;
+        margin: 10px auto;
+    }
+    .navbar{
+       min-width: 100%;
+    }
+}
