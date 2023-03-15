@@ -53,7 +53,7 @@ body{
     gap: 30px;
     justify-content: center;
 }
-.items{
+.item{
     width: 230px;
     height: auto;
     display: flex;
@@ -62,19 +62,19 @@ body{
     border-radius: 10px;
     transition: 0.2s ease;
 }
-.items:hover{
+.item:hover{
     width: 235px;
     height: auto;
     box-shadow: 10px 10px 30px rgba(0,0,0 , 0.2);
 }
-.items img{
+.item img{
     border-radius: 10px;
 }
-.items p{
+.item p{
     font-size: 13px;
     padding: 10px 0;
 }
-.items .star i{
+.item .star i{
     color: hsl(39, 100%, 50%);
 }
 .details{
