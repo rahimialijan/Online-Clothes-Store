@@ -1,6 +1,6 @@
 const shop=document.getElementById('shop');
 
-const basket=[];
+const basket=JSON.parse(localStorage.getItem('data')) || [];
 
 const arrayItems=[{
     id:'sdkjaskl',
@@ -55,6 +55,7 @@ let addItems=()=>{
 
     return (shop.innerHTML=arrayItems.map((x)=>{
         let {id,name,desc,price,img}=x;
+        let search=basket.find((x)=>x.id===id) || [];
         return `
         <div  id="product-id-${id}" class="item">
             <img src="${img}" alt="">
@@ -73,7 +74,7 @@ let addItems=()=>{
                 <div class="quintity">
                     <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
                     <div id=${id} class="quantity-count">
-                    0
+                    ${search.count===undefined? 0: search.count}
                     </div>
                     <i onclick="increment(${id})"  class="bi bi-plus-lg"></i>
                 </div>
@@ -97,6 +98,7 @@ let increment=(id)=>{
     search.count +=1
    }
     
+   localStorage.setItem("data", JSON.stringify(basket))
    // console.log(basket)
     update(selectedItem.id)
 }
@@ -105,19 +107,30 @@ let increment=(id)=>{
 
 let decrement=(id)=>{
     let selectedItem=id;
-   let search=basket.find((x)=>x.id===selectedItem.id)
-   if (search.count===0) return
+   let search=basket.find((x)=>x.id===selectedItem.id);
+
+    if (search===undefined)return
+
+   else if (search.count===0) return
    else{
     search.count -=1
    }
-    
+   
     //console.log(basket)    
    update(selectedItem.id)
+   basket=basket.filter((x)=>x.count!==0);
+   localStorage.setItem("data", JSON.stringify(basket))
 }
 
 let update=(id)=>{
     let search = basket.find((x)=>x.id===id)
    console.log(search.count)
    document.getElementById(id).innerHTML = search.count;
+   calculation()
 }
 
+let calculation=(id)=>{
+    const CartIcon= document.getElementById('cart-amount');
+    CartIcon.innerHTML=basket.map((x)=>x.count).reduce((x,y)=>x+y ,0);
+}
+calculation()

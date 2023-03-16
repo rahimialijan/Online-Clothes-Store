@@ -9,6 +9,10 @@ body{
 
 /*navbar style is here*/
 
+i{
+    cursor: pointer;
+}
+
 .navbar{
     display: flex;
     flex-direction: row;
