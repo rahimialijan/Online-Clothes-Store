@@ -5,6 +5,7 @@
 }
 body{
     font-family: sans-serif;
+    position: relative;
 }
 
 /*navbar style is here*/
@@ -23,7 +24,12 @@ i{
     color: #fff;
     margin-bottom: 30px;
     width: 100%;
-    position: fixed;
+    position: sticky;
+    margin-top: 0;
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
 }
 .navbar h2{
     font-size: 40px;
@@ -41,8 +47,8 @@ i{
 .amount{
     position: absolute;
     padding: 6px;
-    background: #fff;
-    color: red;
+    background: red;
+    color: white;
     top: -15px;
     right: -10px;
     border-radius: 3px;
@@ -50,7 +56,7 @@ i{
 
 /*Cart sectio style is here*/
 .cart{
-    padding-top:160px;
+    padding-top:30px;
     display: grid;
     grid-template-columns: repeat(4, 230px);
     margin:0 100px;
@@ -122,4 +128,58 @@ i{
     .navbar{
        min-width: 100%;
     }
+}
+
+
+/*cart page styling*/
+
+.label{
+   margin-top: 30px;
+   text-align: center;
+   padding: 8px;
+}
+.HomeBtn{
+    margin-top: 10px;
+    background-color: rgb(1, 15, 15);
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+}
+
+
+.bi-x-lg{
+    color: red;
+    font-weight: 900;
+}
+.shoping-cart{
+    display: grid;
+    grid-template-columns: repeat(1, 320px);
+    border: 2px solid black;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cart-item{
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    
+}
+.title-price-x{
+    position: absolute;
+    top: 3px;
+    width: 204px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.cart-item-price{
+    background-color: rgb(5, 19, 20);
+    color: white;
+    padding: 3px;
+    border-radius: 2px;
 }
