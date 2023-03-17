@@ -22,10 +22,10 @@ i{
     padding: 25px 60px;
     background: #465163;
     color: #fff;
-    margin-bottom: 30px;
     width: 100%;
-    position: sticky;
-    margin-top: 0;
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 .navbar a{
     text-decoration: none;
@@ -59,7 +59,7 @@ i{
     padding-top:30px;
     display: grid;
     grid-template-columns: repeat(4, 230px);
-    margin:0 100px;
+    margin:100px 100px;
     gap: 30px;
     justify-content: center;
 }
@@ -78,7 +78,8 @@ i{
     box-shadow: 10px 10px 30px rgba(0,0,0 , 0.2);
 }
 .item img{
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
 }
 .item p{
     font-size: 13px;
@@ -134,11 +135,11 @@ i{
 /*cart page styling*/
 
 .label{
-   margin-top: 30px;
+   margin-top: 150px;
    text-align: center;
    padding: 8px;
 }
-.HomeBtn{
+.HomeBtn, .checkout, .removeAll{
     margin-top: 10px;
     background-color: rgb(1, 15, 15);
     color: white;
@@ -147,7 +148,12 @@ i{
     border-radius: 3px;
     border: none;
 }
-
+.checkout{
+    background-color: green;
+}
+.removeAll{
+     background-color: red;
+}
 
 .bi-x-lg{
     color: red;
@@ -156,11 +162,14 @@ i{
 .shoping-cart{
     display: grid;
     grid-template-columns: repeat(1, 320px);
-    border: 2px solid black;
-    justify-content: center;
-    gap: 15px;
+    justify-content: center;   
+    gap: 30px;
+    margin-top: 1px;
+    margin-bottom: 50px;
 }
-
+.small-img{
+    border-radius: 8px 0 0 8px;
+}
 .cart-item{
     border: 2px solid black;
     border-radius: 10px;
@@ -182,4 +191,10 @@ i{
     color: white;
     padding: 3px;
     border-radius: 2px;
+}
+#cart-button{
+    margin-top: 25px;
+}
+.total-amount{
+    margin-top: 8px;
 }
